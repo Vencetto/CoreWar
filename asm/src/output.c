@@ -6,7 +6,7 @@
 /*   By: dkotlyar <dkotlyar@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/24 19:27:24 by dkotlyar          #+#    #+#             */
-/*   Updated: 2018/12/27 19:20:05 by dkotlyar         ###   ########.fr       */
+/*   Updated: 2018/12/27 19:42:49 by dkotlyar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ char		*get_output_file_name(char *str)
 {
 	char	*res;
 	char	*tmp;
-
 	
 	if (ft_strrchr(str, '.'))
 		tmp = ft_strsub(str, 0, ft_strrchr(str, '.') - str);
