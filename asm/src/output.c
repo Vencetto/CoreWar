@@ -16,7 +16,7 @@ char		*get_output_file_name(char *str)
 {
 	char	*res;
 	char	*tmp;
-	
+
 	if (ft_strrchr(str, '.'))
 		tmp = ft_strsub(str, 0, ft_strrchr(str, '.') - str);
 	else
