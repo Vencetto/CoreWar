@@ -80,7 +80,7 @@ typedef struct			s_player
 {
 	char				name[PROG_NAME_LENGTH + 1];
 	char				comment[COMMENT_LENGTH + 1];
-	int					size;
+	unsigned int		size;
 	int					id;
 	int					numb;
 	int					alive;
@@ -204,7 +204,6 @@ void					dump_map(t_tool *tool);
 void					write_map(t_tool *tool, int pos, int src, size_t len);
 void					show_death(t_carriage *carg, t_tool *tool);
 void					kill_all(t_tool *tool);
-int						check_wrong_size(int size, unsigned char **tmp);
 void					check_place(t_tool *tool, t_carriage *carg);
 int						length(int num, int av1, int av2, int av3);
 int						lab_length(int num, int av1, int av2, int av3);

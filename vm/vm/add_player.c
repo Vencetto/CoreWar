@@ -12,28 +12,6 @@
 
 #include "vm.h"
 
-int				check_wrong_size(int size, unsigned char **tmp)
-{
-	int	i;
-	int	pos;
-	int	code;
-
-	i = -1;
-	pos = 0;
-	code = 0;
-	while (++i < MAX_SIZE)
-	{
-		if ((*tmp)[i] != 0)
-		{
-			pos = i + 1;
-			code++;
-		}
-	}
-	if (pos != size || code == 0)
-		return (1);
-	return (0);
-}
-
 void			read_name(t_player *player, int fd, t_tool *tool)
 {
 	unsigned char	header[4];
@@ -112,8 +90,8 @@ t_player		add_player(char *av, t_tool *tool, int numb, int id)
 	read_name(&player, fd, tool);
 	read_comm(&player, fd, tool);
 	read(fd, tmp, CHAMP_MAX_SIZE);
-	if (player.size >= CHAMP_MAX_SIZE || check_wrong_size(player.size, &tmp))
-		err_exit("wrong player", tool);
+	if (player.size == 0 || player.size > CHAMP_MAX_SIZE)
+		err_exit("wrong size", tool);
 	player.id = id;
 	player.numb = numb;
 	ft_memcpy(&tool->map[tool->pl_shift * id], tmp, (size_t)player.size);

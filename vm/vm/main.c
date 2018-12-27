@@ -62,7 +62,7 @@ void	start_game(t_tool *tool)
 	{
 		if (tool->visual == 0)
 		{
-			ft_printf("* Player %d, weighing %d bytes, \"%s\" (\"%s\") !\n",
+			ft_printf("* Player %d, weighing %u bytes, \"%s\" (\"%s\") !\n",
 					ABS(tool->pl_arr[i].numb), tool->pl_arr[i].size,
 					tool->pl_arr[i].name, tool->pl_arr[i].comment);
 		}
